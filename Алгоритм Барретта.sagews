@@ -20,14 +20,14 @@ def Barrett(x,m,b):
     m1=int("".join(map(str, m1)))
     x1=np.array(numsys(x,b))
     x1=int("".join(map(str, x1)))
-    z=floor(pow(b,2*k)/m1)
+    z=pow(b,2*k)//m1
     print k
     print 'Основание b = ',b
     print 'Модуль m по основани b: ', m1
     print 'Число x по основанию b: ', x1
     print 'z = [b^2k / m] = ', z
 
-    q = floor(   (floor(x1/pow(b,k-1))*z)/pow(b,k+1)   )
+    q = ((x1//pow(b,k-1))*z)//pow(b,k+1)
     r1 = x1 % pow(b,k+1)
     r2 = (q*m1) % pow(b,k+1)
     if r1 >= r2:
